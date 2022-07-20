@@ -4,13 +4,120 @@
   <head>
     <meta charset="UTF-8">
     <title> Calculator </title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 98vh;
+      }
+      .non-digit_keys {
+        box-sizing: border-box;
+        height: 80px;
+        width: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 80px;
+        border-style: solid;
+        border-width: 2px;
+        border-color: #00ff08;
+        color: rgb(30, 0, 255);
+      }
+      #equals {
+        font-size: 88px;
+        color: rgb(25, 0, 255);
+      }
+      #backspace {
+        font-size: 88px;
+        color: rgb(255, 136, 0);
+        align-items: flex-end;
+      }
+      #clear {
+        font-size: 48px;
+        color: red;
+      }
+      #float {
+        font-size: 72px;
+        color: green;
+        align-items: flex-end;
+      }
+      #negative {
+        font-size: 72px;
+        color: green;
+      }
+      #percent {font-size: 52px}
+      #display {
+        box-sizing: border-box;
+        width: 400px; 
+        height: 80px;
+        border-style: solid;
+        border-width: 2px;
+        border-color: #00ff08;
+      }
+    </style>
   </head>
   <body>
+    <div id="container">
+      <div id="display"></div>
+      <div class="non-digit_keys" id="equals"> = </div>
+      <div class="non-digit_keys" id="negative"> − </div>
+      <div class="non-digit_keys" id="float"> . </div>
+      <div class="non-digit_keys" id="backspace"> ← </div>
+      <div class="non-digit_keys" id="clear"> AC </div>
+      <div class="non-digit_keys" id="percent"> % </div>
+      <div class="non-digit_keys"> ÷ </div>
+      <div class="non-digit_keys"> × </div>
+      <div class="non-digit_keys"> − </div>
+      <div class="non-digit_keys"> + </div>
+    </div>
     <script>
+      const container = document.querySelector('#container');
+      container.style.display = 'flex';
+      container.style.flexDirection = 'row-reverse';
+      container.style.flexWrap = 'wrap';
+      container.style.height = '400px';
+      container.style.width = '400px';
+      container.style.borderStyle = 'solid';
+      container.style.borderWidth = '2px';
+      container.style.borderColor = '#00ff08';
+
+      const digits = [];
+      for (let i = 9; i >= 0; i--) {
+        digits.push(i)
+      }
+      digits.forEach( (el) => {
+        let digit = document.createElement('div');
+        digit.innerHTML = el;
+        container.appendChild(digit);
+
+        digit.style.boxSizing = 'border-box';
+        digit.style.height = '80px';
+        digit.style.width = '80px';
+        digit.style.display = 'flex';
+        digit.style.alignItems = 'center';
+        digit.style.justifyContent = 'center';
+        digit.style.fontSize = '72px';
+        digit.style.borderStyle = 'solid';
+        digit.style.borderWidth = '2px';
+        digit.style.borderColor = '#00ff08';
+        digit.style.color = 'green';
+      });
+
       const add = (summand0, summand1) => summand0 + summand1;
       const subtract = (minuend, subtrahend) => minuend - subtrahend;
       const multiply = (multiplier0, multiplier1) => multiplier0 * multiplier1;
       const divide = (dividend, divisor) => dividend / divisor;
+      
+      function operate(operator, number0, number1) {
+        switch (operator) {
+          case "+": add(number0, number1); break;
+          case "−": subtract(number0, number1); break;
+          case "×": multiply(number0, number1); break;
+          case "÷": divide(number0, number1); break;
+          case "%": divide(number0, 100); break;
+        }
+      }
     </script>
   </body>
 </html>
