@@ -1,0 +1,77 @@
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#container {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  height: 400px;
+  width: 400px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #00ff08;
+}
+.digits {
+  box-sizing: border-box;
+  height: 80px;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 72px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #00ff08;
+  color: green;
+}
+.non-digit_keys {
+  box-sizing: border-box;
+  height: 80px;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #00ff08;
+  color: rgb(30, 0, 255);
+}
+#equals {
+  font-size: 88px;
+  color: rgb(25, 0, 255);
+}
+#backspace {
+  font-size: 88px;
+  color: rgb(255, 136, 0);
+  align-items: flex-end;
+}
+#clear {
+  font-size: 48px;
+  color: red;
+}
+#float {
+  font-size: 72px;
+  color: green;
+  align-items: flex-end;
+}
+#negative {
+  font-size: 72px;
+  color: green;
+}
+#percent {font-size: 52px}
+#display {
+  box-sizing: border-box;
+  width: 400px; 
+  height: 80px;
+  font-size: 72px;
+  text-align: center;
+  color: green;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #00ff08;
+}
