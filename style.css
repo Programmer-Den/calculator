@@ -1,77 +1,92 @@
+body,
+#container, #display,
+.non-digit_keys, .digits {
+  display: flex;
+}
+
+body,
+#display,
+.non-digit_keys, .digits {
+  justify-content: center;
+  align-items: center;
+}
+
+#container, #display,
+.non-digit_keys, .digits {
+  border: 2px solid #00ff08;
+}
+
+#display, #float, #negative,
+.digits {
+  color: green;
+}
+
+#display,
+.non-digit_keys, .digits {
+  height: 80px;
+}
+
+#container, #display {
+  width: 400px;
+}
+
+#backspace, #float {
+  font-size: 5.5rem;
+  align-items: flex-end;
+}
+
+#equals,
+.non-digit_keys {
+  font-size: 5rem;
+}
+
+#negative,
+.digits {
+  font-size: 4rem;
+}
+
+#clear, #percent {
+  font-size: 3rem;
+}
+
+.non-digit_keys, .digits {
+  user-select: none;
+  cursor: pointer;
+  width: 80px;
+  box-sizing: border-box;
+}
+
 body {
   height: 100vh;
+  width: 100vw;
   margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 #container {
-  display: flex;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
+  flex-flow: row-reverse wrap;
   height: 400px;
-  width: 400px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #00ff08;
 }
-.digits {
-  box-sizing: border-box;
-  height: 80px;
-  width: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 72px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #00ff08;
-  color: green;
+
+#display {
+  text-align: center;
+  user-select: all;
+  cursor: grab;
 }
-.non-digit_keys {
-  box-sizing: border-box;
-  height: 80px;
-  width: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 80px;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #00ff08;
-  color: rgb(30, 0, 255);
+#display::selection {
+  background-color: gold;
 }
-#equals {
-  font-size: 88px;
-  color: rgb(25, 0, 255);
-}
-#backspace {
-  font-size: 88px;
-  color: rgb(255, 136, 0);
-  align-items: flex-end;
-}
+
 #clear {
-  font-size: 48px;
   color: red;
 }
-#float {
-  font-size: 72px;
-  color: green;
-  align-items: flex-end;
+#backspace {
+  color: rgb(255, 136, 0);
 }
-#negative {
-  font-size: 72px;
-  color: green;
+#equals {
+  color: rgb(25, 0, 255);
 }
-#percent {font-size: 52px}
-#display {
-  box-sizing: border-box;
-  width: 400px; 
-  height: 80px;
-  font-size: 72px;
-  text-align: center;
-  color: green;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #00ff08;
+.non-digit_keys {
+  color: rgb(30, 0, 255);
+}
+#percent {
+  color: #700896;
 }
